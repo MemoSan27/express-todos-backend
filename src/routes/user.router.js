@@ -15,7 +15,7 @@ userRouter.route('/users/me')
     .get(verifyJWT, getLoggedUser)         
 
 userRouter.route('/users/:id')
-    .get(getOne)
+    .get(verifyJWT, getOne)
     .delete(verifyJWT, remove)
     .put(verifyJWT, update);
 
